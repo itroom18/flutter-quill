@@ -1,6 +1,7 @@
 import 'dart:io' show File;
 
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_quill/internal.dart';
 
 import '../image_embed_types.dart';
@@ -15,6 +16,7 @@ class QuillEditorImageEmbedConfig {
     ImageEmbedBuilderOnRemovedCallback? onImageRemovedCallback,
     this.shouldRemoveImageCallback,
     this.imageProviderBuilder,
+    this.dialogColors,
     this.imageErrorWidgetBuilder,
     this.onImageClicked,
   }) : _onImageRemovedCallback = onImageRemovedCallback;
@@ -109,6 +111,8 @@ class QuillEditorImageEmbedConfig {
   /// to the image when it's clicked, you can pass a callback to this property.
   final void Function(String imageSource)? onImageClicked;
 
+  final List<Color>? dialogColors;
+
   static ImageEmbedBuilderOnRemovedCallback get defaultOnImageRemovedCallback {
     return (imageUrl) async {
       if (kIsWeb) {
@@ -151,15 +155,17 @@ class QuillEditorImageEmbedConfig {
     ImageEmbedBuilderWillRemoveCallback? shouldRemoveImageCallback,
     ImageEmbedBuilderProviderBuilder? imageProviderBuilder,
     ImageEmbedBuilderErrorWidgetBuilder? imageErrorWidgetBuilder,
+    List<Color>? dialogColors,
     bool? forceUseMobileOptionMenuForImageClick,
   }) {
     return QuillEditorImageEmbedConfig(
-      onImageRemovedCallback: onImageRemovedCallback ?? _onImageRemovedCallback,
-      shouldRemoveImageCallback:
-          shouldRemoveImageCallback ?? this.shouldRemoveImageCallback,
-      imageProviderBuilder: imageProviderBuilder ?? this.imageProviderBuilder,
-      imageErrorWidgetBuilder:
-          imageErrorWidgetBuilder ?? this.imageErrorWidgetBuilder,
-    );
+        onImageRemovedCallback:
+            onImageRemovedCallback ?? _onImageRemovedCallback,
+        shouldRemoveImageCallback:
+            shouldRemoveImageCallback ?? this.shouldRemoveImageCallback,
+        imageProviderBuilder: imageProviderBuilder ?? this.imageProviderBuilder,
+        imageErrorWidgetBuilder:
+            imageErrorWidgetBuilder ?? this.imageErrorWidgetBuilder,
+        dialogColors: dialogColors ?? this.dialogColors);
   }
 }

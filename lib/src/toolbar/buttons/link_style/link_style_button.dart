@@ -104,6 +104,7 @@ class QuillToolbarLinkStyleButtonState
       context: context,
       builder: (_) {
         return LinkDialog(
+          dialogColors: options.dialogColors,
           validateLink: options.validateLink,
           // ignore: deprecated_member_use_from_same_package
           legacyLinkRegExp: options.linkRegExp,
@@ -111,6 +112,8 @@ class QuillToolbarLinkStyleButtonState
           text: initialTextLink.text,
           link: initialTextLink.link,
           action: options.linkDialogAction,
+          textAction: options.linkTextAction,
+          urlAction: options.linkUrlAction,
         );
       },
     );

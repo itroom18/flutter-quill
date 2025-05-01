@@ -56,6 +56,7 @@ class QuillEditorImageEmbedBuilder extends EmbedBuilder {
             config: config,
             imageSource: imageSource,
             imageSize: imageSize,
+            dialogColors: config.dialogColors ?? [Colors.white, Colors.white],
             readOnly: embedContext.readOnly,
             imageProvider: imageWidget.image,
           ),

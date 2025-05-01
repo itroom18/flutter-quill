@@ -1,9 +1,13 @@
 /// @docImport '../../../rules/insert.dart' show AutoFormatMultipleLinksRule;
 library;
 
+import 'package:flutter/material.dart';
+
 import '../../../common/utils/link_validator.dart';
 import '../../simple_toolbar.dart';
 import '../../structs/link_dialog_action.dart';
+import '../../structs/link_text_action.dart';
+import '../../structs/link_url_action.dart';
 import '../../theme/quill_dialog_theme.dart';
 
 class QuillToolbarLinkStyleButtonExtraOptions
@@ -22,7 +26,10 @@ class QuillToolbarLinkStyleButtonOptions extends QuillToolbarBaseButtonOptions<
     this.dialogTheme,
     this.linkRegExp,
     this.linkDialogAction,
+    this.dialogColors,
     this.validateLink,
+    this.linkTextAction,
+    this.linkUrlAction,
     super.iconSize,
     super.iconButtonFactor,
     super.iconData,
@@ -33,6 +40,7 @@ class QuillToolbarLinkStyleButtonOptions extends QuillToolbarBaseButtonOptions<
   });
 
   final QuillDialogTheme? dialogTheme;
+  final List<Color>? dialogColors;
 
   /// Allows to override the default [AutoFormatMultipleLinksRule.singleLineUrlRegExp].
   ///
@@ -40,6 +48,8 @@ class QuillToolbarLinkStyleButtonOptions extends QuillToolbarBaseButtonOptions<
   @Deprecated('Use validateLink instead')
   final RegExp? linkRegExp;
   final LinkDialogAction? linkDialogAction;
+  final LinkTextAction? linkTextAction;
+  final LinkUrlAction? linkUrlAction;
 
   /// {@macro link_validation_callback}
   ///

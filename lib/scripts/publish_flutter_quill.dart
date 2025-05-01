@@ -3,8 +3,8 @@
 import 'dart:io';
 import 'package:http/http.dart' as http;
 
-import './update_changelog_version.dart';
-import './update_pubspec_version.dart';
+import 'update_changelog_version.dart';
+import 'update_pubspec_version.dart';
 import 'pubspec_version_check.dart';
 
 // NOTE: This script is for the maintainers.

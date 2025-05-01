@@ -7,6 +7,8 @@ import '../buttons/link_style/link_style2_button.dart';
 import '../buttons/link_style/link_style_button.dart';
 import '../embed/embed_button_builder.dart';
 import '../structs/link_dialog_action.dart';
+import '../structs/link_text_action.dart';
+import '../structs/link_url_action.dart';
 import '../theme/quill_dialog_theme.dart';
 import '../theme/quill_icon_theme.dart';
 import 'simple_toolbar_button_options.dart';
@@ -119,6 +121,8 @@ class QuillSimpleToolbarConfig {
     /// Toolbar items to display for controls of embed blocks
     this.embedButtons,
     this.linkDialogAction,
+    this.linkTextAction,
+    this.linkUrlAction,
 
     ///The theme to use for the icons in the toolbar, uses type [QuillIconTheme]
     // this.iconTheme,
@@ -216,6 +220,8 @@ class QuillSimpleToolbarConfig {
 
   // Overrides the action in the _LinkDialog widget
   final LinkDialogAction? linkDialogAction;
+  final LinkTextAction? linkTextAction;
+  final LinkUrlAction? linkUrlAction;
 
   /// The color of the toolbar.
   ///

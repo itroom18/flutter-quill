@@ -16,6 +16,7 @@ void main() {
   group('$ImageOptionsMenu', () {
     test('prefersGallerySave defaults to true', () {
       final widget = ImageOptionsMenu(
+        dialogColors: [],
         controller: FakeQuillController(),
         config: const QuillEditorImageEmbedConfig(),
         imageProvider: FakeImageProvider(),
@@ -50,6 +51,7 @@ void main() {
         bool prefersGallerySave = false,
       }) async {
         await tester.pumpWidget(QuillTestApp.withScaffold(ImageOptionsMenu(
+          dialogColors: [],
           controller: controller,
           config: const QuillEditorImageEmbedConfig(),
           imageProvider: imageProvider ?? FakeImageProvider(),
